@@ -114,6 +114,12 @@ $ac_class = end($php_self);
                         <li class="<?= $ac_class=='view_question.php'?'active':'' ?>"><a href="<?= isset($back_asset)?$back_asset:'' ?>view_question.php">View Question</a></li>
                     </ul>
                 </li>
+                <li class="">
+                    <a class="<?= $ac_class=='users.php'?'active':'' ?>" href="<?= isset($back_asset)?$back_asset:'' ?>users.php">
+                        <i class="fa fa-user"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
