@@ -1,0 +1,483 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#FFFFFF;
+}
+
+/* ========== Custom CSS Starts ========== */
+
+
+/* ===== CSS For "Common Cases" Starts Here ===== */
+.page_wrapper{
+	background: url(images/main_bg.jpg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+.page_contents{
+	max-width: 580px;
+	margin: 0 auto;
+	padding: 0 25px;
+	border: 1px solid #F0F0F0;
+}
+.page_contents .top_logo{
+	text-align: center;
+	padding: 10px 15px;
+}
+.page_contents .top_logo a{
+	color: #7030A0;
+	text-decoration: none;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	font-size: 56px;
+}
+.page_contents .main_contents{
+	min-height: calc(100vh - 106px);
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+	padding: 15px 50px;
+}
+
+.clickable_link button{
+	color: #FFFFFF;
+	width: 100%;
+	border: none;
+	background: #7030A0;
+	border-radius: 5px;
+	padding: 10px 15px;
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	text-decoration: none;
+	display: block;
+}
+/* ===== CSS For "Common Cases" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Home Page" Starts Here ===== */
+.home_page_contents{
+	background: url(images/First_page_bg.jpg) no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+.home_page_contents .first_page_heading h4{
+	color: #000000;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.4;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.home_page_contents form .form-control{
+	max-width: 280px;
+	margin: 0px auto;
+	border: 1px solid #7030A0;
+	background: rgba(0,0,0, 0.75);
+	height: inherit;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	
+	text-align: center;
+	text-align-last: center;
+	cursor: pointer;
+}
+.home_page_contents form .form-control option{
+	text-align: center;
+	
+}
+.home_page_contents .clickable_link{
+	max-width: 280px;
+	width: 100%;
+	margin: 0px auto;
+	margin-top: 15px;
+}
+.home_page_contents .clickable_link a{
+	width: 100%;
+}
+/* ===== CSS For "Home Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Instructions" Starts Here ===== */
+.instruction_contents{
+	max-width: 420px;
+	margin: 0px auto;
+}
+.instruction_contents .instructions_heading h4{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 36px;
+	margin-bottom: 75px;
+	text-align: center;
+}
+.instruction_contents .instructions{
+	
+}
+.instruction_contents .instructions ul{
+	margin-bottom: 0px;
+}
+.instruction_contents .instructions ul li{
+	list-style: none;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #C17529;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	padding: 5px 15px;
+	border-radius: 5px;
+	text-transform: capitalize;
+}
+.instruction_contents .instructions ul li:last-child{
+	background: #B54C2D;
+}
+/* ===== CSS For "Instructions" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Questions" Starts Here ===== */
+.page_contents .questions_contents{
+	padding: 30px;
+}
+
+.questions_contents .q_number_time{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;	
+}
+.questions_contents .q_number_time h4{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	margin-bottom: 0px;
+}
+.questions_contents .q_number_time .time{
+	text-align: right;
+}
+
+.questions_contents .question h4{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	margin: 30px 0px;
+}
+/*	=============================	*/
+.questions_contents .answers{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;	
+}
+.questions_contents [type='radio'] {
+	display: none; 
+}
+.questions_contents .answers .single_answer{
+	background: transparent;
+	border: 1px solid #955F07;
+	border-radius: 3.5px;
+	padding: 10px;
+}
+.questions_contents .answers .single_answer h5{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 0px;
+	text-align: center;
+	text-transform: capitalize;
+}
+.questions_contents .answers .single_answer.active{
+	background: transparent;
+	border: 1px solid greenyellow;
+}
+.questions_contents .answers .single_answer.active h5{
+	color: greenyellow;
+}
+/*	=============================	*/
+.questions_contents .buttons_group{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 25px;
+	margin-top: 40px;
+}
+.questions_contents .buttons_group .single_button{
+	
+}
+.questions_contents .buttons_group .single_button button{
+	color: #FFFFFF;
+	background: #FF0000;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	border-radius: 3.5px;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+/* ===== CSS For "Questions" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Questions With Image" Starts Here ===== */
+.questions_contents_image .answers{
+	max-width: 400px;
+	margin: 0px auto;
+}
+.questions_contents_image .answers .single_answer{
+	padding: 5px;
+	border-radius: 0px;
+}
+.questions_contents_image .answers .single_answer.active{
+	border: 1px solid #FF0000;
+}
+/* ===== CSS For "Questions With Image" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Test Is Over" Starts Here ===== */
+.test_over_contents{
+	
+}
+.test_over_contents .test_over_heading h1{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.test_over_contents .clickable_link a{
+	font-size: 30px;
+}
+/* ===== CSS For "Test Is Over" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Get Result" Starts Here ===== */
+.page_contents .get_result_contents{
+	padding: 30px;
+	padding-top: 0px;
+}
+.get_result_contents .score_is{
+	text-align: center;
+}
+.get_result_contents .score_is h2{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 48px;
+	margin-bottom: 10px;
+}
+.get_result_contents .score_is h3{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 32px;
+	border: 1px solid #955F07;
+	padding: 5px 15px;
+	border-radius: 3.5px;
+	display:  inline-block;
+}
+.get_result_contents .get_result h3{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	margin: 25px 0px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.get_result_contents .form_part .form-control{
+	border-radius: 2.5px;
+	border: 1px solid #FFFFFF;
+	background: transparent;
+	height: inherit;
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;	
+}
+.get_result_contents .form_part .payment_methods{
+	margin-top: 15px;
+}
+.get_result_contents .form_part .payment_methods ul{
+	margin: 20px 0px;
+	text-align: center;
+}
+.get_result_contents .form_part .payment_methods ul li{
+	list-style: none;
+	max-width: 300px;
+	margin: 0px auto;
+	margin-bottom: 5px;
+}
+.get_result_contents .form_part .payment_methods ul li:last-child{
+	margin-bottom: 0px;
+}
+.get_result_contents .form_part .payment_methods ul li img{
+	width: 100%;
+}
+/* ===== CSS For "Get Result" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Your Score Is" Starts Here ===== */
+.your_score_contents .score_is{
+	text-align: center;
+}
+.your_score_contents .score_is h2{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 48px;
+	margin-bottom: 10px;
+}
+.your_score_contents .score_is h3{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 32px;
+	border: 1px solid #955F07;
+	padding: 5px 15px;
+	border-radius: 3.5px;
+	display:  inline-block;
+}
+.your_score_contents .score_same_as{
+	margin: 50px 0px; 
+}
+.your_score_contents .score_same_as h3{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	text-align: center;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+}
+.your_score_contents .score_same_as h5{
+	color: #FFFFFF;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+}
+.your_score_contents .score_same_as h5:last-child{
+	margin-bottom: 0px;
+}
+.your_score_contents .clickable_link a{
+	font-size: 20px;
+}
+.your_score_contents .share_link{
+	text-align: center;
+	margin-top: 15px;
+}
+.your_score_contents .share_link a{
+	max-width: 200px;
+	margin: 0px auto;
+}
+/* ===== CSS For "Your Score Is" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/*	Extra small devices (less than 576px)	*/
+@media (max-width: 575.98px) {
+	
+	.page_contents .main_contents{
+		padding: 0px;
+	}
+	.page_contents .top_logo a{
+		font-size: 48px;
+	}
+	.your_score_contents .clickable_link a{
+		font-size: 15px;
+		padding: 10px 5px;
+	}
+	.your_score_contents .score_is h2{
+		font-size: 40px;
+	}
+	.get_result_contents .score_is h2{
+		font-size: 40px;
+	}
+	.get_result_contents .get_result h3{
+		font-size: 24px;
+	}
+	.test_over_contents .test_over_heading h1{
+		font-size: 40px;
+	}
+	.test_over_contents .clickable_link a {
+		font-size: 24px;
+	}
+	.your_score_contents .score_same_as h3{
+		font-size: 26px;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
