@@ -1,11 +1,12 @@
 <?php
 include "php/autoload.php";
-if (isset($_SESSION['score_check'])){
-    $usr_id = $_SESSION['score_check'];
-    $select = $config->query("SELECT * FROM `people` where id='$usr_id'");
+if (isset($_GET['score'])){
+    $usr_id = $_GET['score'];
+    $select = $config->query("SELECT * FROM `people` where `id`like'$usr_id'and`pay`like'true'");
     $checking = mysqli_num_rows($select);
     if ($checking==1){
         $data = mysqli_fetch_array($select);
+        $score = $data['score'];
     ?>
     <!DOCTYPE HTML>
     <html lang="en-US">
@@ -39,15 +40,22 @@ if (isset($_SESSION['score_check'])){
                         </div>
                         <div class="score_same_as">
                             <h3>Your score is same as:</h3>
-                            <h5>Famous People 1</h5>
-                            <h5>Famous People 2</h5>
-                            <h5>Famous People 3</h5>
+                            <?php
+                            $select2 = $config->query("SELECT * FROM `people` where `score`like'$score'and`pay`like'true'");
+                            while ($data2 = mysqli_fetch_assoc($select2)){
+                                $mail = $data2['mail'];
+                                $explode = explode("@",$mail);
+                                if ($data2['mail']==$data['mail']){ }else{
+                            ?>
+                            <h5><?= $explode[0] ?></h5>
+                            <?php } } ?>
                         </div>
                         <div class="clickable_link">
                             <a href="https://www.instagram.com/p/CJ88SHHJJC1/?igshid=1fjs30oxv0euz">To Understand more what my score mean</a>
                         </div>
-                        <div class="clickable_link share_link">
-                            <a href="javascript:void(0)">Share</a>
+                        <div class="share_link">
+                            <input type="text" id="link" class="form-control mb-2" value="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+                            <button onclick="copy()" class="btn btn-success">Copy and Share</button>
                         </div>
                     </div>
                 </div>
@@ -61,12 +69,19 @@ if (isset($_SESSION['score_check'])){
             <script type="text/javascript" src="js/bootstrap.min.js"></script>
             <!--Custom JavaScript-->
             <script type="text/javascript">
-
+                function copy() {
+                    var copyText = document.getElementById("link");
+                    copyText.select();
+                    document.execCommand("copy");
+                }
             </script>
 
         </body>
 
     </html>
-<?php unset($_SESSION['score_check']); } }else{
+<?php }else{
+        header("location:index.php");
+    }
+}else{
     header("location:index.php");
 } ?>

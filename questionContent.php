@@ -20,6 +20,7 @@ $number_of_page = ceil ($total / $results_per_page);
             <?php if (isset($_SESSION['time'])){ include "time.php"; } ?>
         </div>
     </div>
+    <div class="spinner-border loading_spin m-auto text-primary" role="status"></div>
     <?php
     $select = $config->query("select * from questions LIMIT "."$page_first_result".","."$results_per_page");
     while ($data = mysqli_fetch_array($select)){
@@ -30,6 +31,8 @@ $number_of_page = ceil ($total / $results_per_page);
             }
         }
         $select2 = $config->query("select * from answers where id_question='$id'");
+//        $checking = mysqli_num_rows($select2);
+//        if ($checking>0){
         ?>
         <input type="hidden" name="page" class="page" value="<?= $page ?>">
         <input type="hidden" class="question_num" value="<?= $data['id'] ?>" name="question_num">
@@ -43,7 +46,7 @@ $number_of_page = ceil ($total / $results_per_page);
                     ?>
                     <div class="single_answer btn btn-light <?php if (isset($answer_id)){ if ($answer_id==$data2['id']){ echo 'active3'; }else{ echo 'Error4'; } } ?> " data-qid="<?= $data2['id_question'] ?>" data-id="<?= $data2['id'] ?>" data-option="<?= $data2['code_answer'] ?>">
                         <input type="radio" name="options" autocomplete="off">
-                        <h5><?= !empty($data2['answer'])?$data2['answer']:'' ?><?php if (!empty($data2['images'])){ ?> <img src="uploads/<?= $data2['images'] ?>" class="img-fluid" alt="" /> <?php } ?></h5>
+                        <h5><?= !empty($data2['answer'])?$data2['answer']:'' ?></h5>
                     </div>
                 <?php } ?>
             </div>
@@ -53,9 +56,9 @@ $number_of_page = ceil ($total / $results_per_page);
                         <button onclick="back()" class="btn" type="button">Previous</button>
                     </div>
                 <?php } ?>
-                <?php if ($page>1 && $total>$page){ ?>
+                <?php if ($total>$page){ ?>
                     <div class="single_button">
-                        <button class="btn" onclick="window.location.href='php/autoload.php?completed'" type="button">Quit</button>
+                        <button class="btn" onclick="window.location.href='php/autoload.php?quit'" type="button">Quit</button>
                     </div>
                 <?php } ?>
                 <?php if ($page==$total){ ?>
@@ -70,6 +73,7 @@ $number_of_page = ceil ($total / $results_per_page);
             </div>
         </div>
         <?php
+//        }
     }
     ?>
 </form>

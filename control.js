@@ -1,4 +1,5 @@
 function controller() {
+    $(".loading_spin").css("display","block");
     let id = $(".active").data('id');
     if (id===''){
         let id = 0;
@@ -12,6 +13,7 @@ function controller() {
         });
 }
 function back() {
+    $(".loading_spin").css("display","block");
     let id = $(".active").data('id');
     let option = $(".active").data('option');
     let question_num = $(".page").val();

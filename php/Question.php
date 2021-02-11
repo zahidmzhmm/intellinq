@@ -34,18 +34,40 @@ class Question
             }
             return true;
         }
-        if (!empty($file['img']['name'][0])){
-            $img1 = $this->image_controller($file['img'],0,"../uploads");
-            $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[0]','$id_question','$img1')");
-            if (!empty($file['img']['name'][1])){
-                $img2 = $this->image_controller($file['img'],1,"../uploads");
-                $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[1]','$id_question','$img2')");
-                if (!empty($file['img']['name'][2])){
-                    $img3 = $this->image_controller($file['img'],2,"../uploads");
-                    $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[2]','$id_question','$img3')");
-                    if (!empty($file['img']['name'][3])){
-                        $img4 = $this->image_controller($file['img'],3,"../uploads");
-                        $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[3]','$id_question','$img4')");
+//        if (!empty($file['img']['name'][0])){
+//            $img1 = $this->image_controller($file['img'],0,"../uploads");
+//            $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[0]','$id_question','$img1')");
+//            if (!empty($file['img']['name'][1])){
+//                $img2 = $this->image_controller($file['img'],1,"../uploads");
+//                $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[1]','$id_question','$img2')");
+//                if (!empty($file['img']['name'][2])){
+//                    $img3 = $this->image_controller($file['img'],2,"../uploads");
+//                    $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[2]','$id_question','$img3')");
+//                    if (!empty($file['img']['name'][3])){
+//                        $img4 = $this->image_controller($file['img'],3,"../uploads");
+//                        $config->query("INSERT INTO `answers`(`code_answer`, `id_question`, `images`) VALUES ('$code_answer[3]','$id_question','$img4')");
+//                    }
+//                }
+//            }
+//            return true;
+//        }
+        return false;
+    }
+    public function edit($data, $file)
+    {
+        $config = new Config();
+        $old_options = $data['old_option_id'];
+        $questions = $data['questions'];
+        $id_question = $data['question'];
+        $code_answer = ['a', 'b', 'c', 'd'];
+        if (!empty($questions[0]) && !empty($old_options[0])){
+            $config->query("UPDATE `answers` SET `code_answer`='$code_answer[0]',`id_question`='$id_question',`answer`='$questions[0]' WHERE id='$old_options[0]'");
+            if (!empty($questions[1]) && !empty($old_options[1])){
+                $config->query("UPDATE `answers` SET `code_answer`='$code_answer[1]',`id_question`='$id_question',`answer`='$questions[1]' WHERE id='$old_options[1]'");
+                if (!empty($questions[2]) && !empty($old_options[2])){
+                    $config->query("UPDATE `answers` SET `code_answer`='$code_answer[2]',`id_question`='$id_question',`answer`='$questions[2]' WHERE id='$old_options[2]'");
+                    if (!empty($questions[3]) && !empty($old_options[3])){
+                        $config->query("UPDATE `answers` SET `code_answer`='$code_answer[3]',`id_question`='$id_question',`answer`='$questions[3]' WHERE id='$old_options[3]'");
                     }
                 }
             }

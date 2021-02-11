@@ -56,74 +56,32 @@ require_once "includes/header.php";
                                 </select>
                             </div>
                         </div>
-                        <div class="stepy-tab pt-4">
-                            <ul id="default-titles" class="stepy-titles clearfix">
-                                <li id="default-title-0" class="current-step">
-                                    <div>Simple</div>
-                                </li>
-                                <li id="default-title-1" class="">
-                                    <div>Image</div>
-                                </li>
-                            </ul>
+                        <br>
+                        <div class="row mx-0">
+                            <label for="qa" class="col-lg-2 control-label">Question A</label>
+                            <div class="col-lg-10">
+                                <textarea id="qa" name="questions[]" class="summernote" cols="30" rows="10"></textarea>
+                            </div>
                         </div>
-                        <div class="form-horizontal" id="default">
-                            <fieldset title="Simple" class="step" id="default-step-0">
-                                <legend> </legend>
-                                <div class="row mx-0">
-                                    <label for="qa" class="col-lg-2 mt-2 control-label">Question A</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" id="qa" name="questions[]" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label for="qb" class="col-lg-2 mt-2 control-label">Question B</label>
-                                    <div class="col-lg-10">
-                                        <input id="qb" type="text" name="questions[]" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label for="qc" class="col-lg-2 mt-2 control-label">Question C</label>
-                                    <div class="col-lg-10">
-                                        <input id="qc" type="text" name="questions[]" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label for="qd" class="col-lg-2 mt-2 control-label">Question D</label>
-                                    <div class="col-lg-10">
-                                        <input id="qd" type="text" name="questions[]" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset title="Image" class="step" id="default-step-1" >
-                                <legend> </legend>
-                                <div class="row mx-0 my-2">
-                                    <label class="col-lg-2 mt-2 control-label">IMG A</label>
-                                    <div class="col-lg-10">
-                                        <input type="file" name="img[]" class="form-control" placeholder="IMG 1">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label class="col-lg-2 mt-2 control-label">IMG B</label>
-                                    <div class="col-lg-10">
-                                        <input type="file" name="img[]" class="form-control" placeholder="IMG 1">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label class="col-lg-2 mt-2 control-label">IMG C</label>
-                                    <div class="col-lg-10">
-                                        <input type="file" name="img[]" class="form-control" placeholder="IMG 3">
-                                    </div>
-                                </div>
-                                <div class="row mx-0 my-2">
-                                    <label class="col-lg-2 mt-2 control-label">IMG D</label>
-                                    <div class="col-lg-10">
-                                        <input type="file" name="img[]" class="form-control" placeholder="IMG 4">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="mx-3 my-4"><button type="submit" name="add_question_option" class="btn f13 btn-danger">Submit</button></div>
-                            <input type="button" class="finish d-none btn btn-danger" value="Finish"/>
+                        <div class="row mx-0 my-2">
+                            <label for="qb" class="col-lg-2 control-label">Question B</label>
+                            <div class="col-lg-10">
+                                <textarea id="qb" name="questions[]" class="summernote" cols="30" rows="10"></textarea>
+                            </div>
                         </div>
+                        <div class="row mx-0 my-2">
+                            <label for="qc" class="col-lg-2 control-label">Question C</label>
+                            <div class="col-lg-10">
+                                <textarea id="qc" name="questions[]" class="summernote" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mx-0 my-2">
+                            <label for="qd" class="col-lg-2 control-label">Question D</label>
+                            <div class="col-lg-10">
+                                <textarea id="qd" name="questions[]" class="summernote" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="mx-3 my-4"><button type="submit" name="add_question_option" class="btn f13 btn-danger">Submit</button></div>
                     </form>
                 </section>
             </div>
