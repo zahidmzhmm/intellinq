@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2021 at 01:49 PM
+-- Generation Time: Feb 11, 2021 at 03:56 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -150,7 +150,9 @@ CREATE TABLE `people` (
 
 INSERT INTO `people` (`id`, `age`, `mail`, `created_date`, `pay`, `score`) VALUES
 (6, 17, 'sb-polid@personal.example.com', '2021-02-11 10:42:57', 'true', '283'),
-(7, 17, 'name@personal.example.com', '2021-02-11 10:42:57', 'true', '283');
+(7, 17, 'name@personal.example.com', '2021-02-11 10:42:57', 'true', '283'),
+(8, 0, '', '2021-02-11 14:51:22', 'true', 'INF'),
+(9, 17, 'sb-polid@personal.example.com', '2021-02-11 14:54:15', 'true', '100');
 
 -- --------------------------------------------------------
 
@@ -202,20 +204,32 @@ CREATE TABLE `results` (
 --
 
 INSERT INTO `results` (`id`, `age`, `iq_score`) VALUES
-(1, 18, 8),
-(2, 18, 8),
-(3, 16, 4),
-(4, 17, 7),
-(5, 17, 4),
-(6, 17, 1),
-(7, 16, 1),
-(8, 18, 0),
-(9, 17, 2),
-(10, 17, 1),
-(11, 18, 1),
-(12, 18, 1),
-(13, 17, 0),
-(14, 17, 6);
+(1, 18, 15),
+(2, 19, 17),
+(3, 20, 12),
+(4, 21, 13),
+(5, 22, 20),
+(7, 24, 16),
+(8, 25, 16),
+(9, 26, 14),
+(10, 27, 18),
+(11, 28, 12),
+(12, 29, 15),
+(13, 30, 17),
+(14, 31, 12),
+(15, 32, 13),
+(16, 33, 20),
+(17, 34, 14),
+(18, 35, 16),
+(19, 36, 16),
+(20, 37, 14),
+(21, 38, 18),
+(22, 39, 12),
+(23, 40, 14),
+(24, 23, 9),
+(34, 39, 10),
+(35, 39, 11),
+(37, 22, 19);
 
 --
 -- Indexes for dumped tables
@@ -284,7 +298,7 @@ ALTER TABLE `famous_people`
 -- AUTO_INCREMENT for table `people`
 --
 ALTER TABLE `people`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `questions`
@@ -296,7 +310,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

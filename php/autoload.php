@@ -68,10 +68,15 @@ if (isset($_POST['start_question'])){
             ++$correct;
         }
     }
-    $insert = $config->query("INSERT INTO `results`(`age`, `iq_score`) VALUES ('$user_age','$correct')");
-    $last_usr_data = mysqli_fetch_array($config->query("SELECT `id` FROM `results` WHERE 1 order by id desc"));
-    $last_user = $last_usr_data['id'];
-    $_SESSION['step4']=$last_user;
+    $select3 = $config->query("SELECT * FROM `results` WHERE `iq_score`='$correct' order by id desc");
+    if (mysqli_num_rows($select3)>0){
+        $q_age_data = mysqli_fetch_array($select3);
+        $q_age = $q_age_data['age'];
+    }else{
+        $q_age = $user_age;
+    }
+    $_SESSION['step4']=$q_age;
+    $_SESSION['old_age']=$user_age;
     unset($_SESSION['step2']);
     header("location:../get-result.php");
 }elseif (isset($_GET['completed2'])){
@@ -87,10 +92,15 @@ if (isset($_POST['start_question'])){
             ++$correct;
         }
     }
-    $insert = $config->query("INSERT INTO `results`(`age`, `iq_score`) VALUES ('$user_age','$correct')");
-    $last_usr_data = mysqli_fetch_array($config->query("SELECT `id` FROM `results` WHERE 1 order by id desc"));
-    $last_user = $last_usr_data['id'];
-    $_SESSION['step4']=$last_user;
+    $select3 = $config->query("SELECT * FROM `results` WHERE `iq_score`='$correct' order by id desc");
+    if (mysqli_num_rows($select3)>0){
+        $q_age_data = mysqli_fetch_array($select3);
+        $q_age = $q_age_data['age'];
+    }else{
+        $q_age = $user_age;
+    }
+    $_SESSION['step4']=$q_age;
+    $_SESSION['old_age']=$user_age;
     unset($_SESSION['step3']);
     header("location:../get-result.php");
 }elseif (isset($_POST['auth'])){
@@ -98,12 +108,10 @@ if (isset($_POST['start_question'])){
         $add = $question->QuestionPhpFun($_POST);
     }
     if ($_POST['auth']=='payment_completed' && isset($_POST['email'])){
-        $user_qid = $_SESSION['step4'];
-        $choose = mysqli_fetch_array($config->query("SELECT * FROM `results` WHERE id='$user_qid'"));
-        $user_age = $choose['age'];
-        $iq_score = $choose['iq_score'];
         $email = $_POST['email'];
-        $score = ($user_age/$iq_score)*100;
+        $user_q_age = $_SESSION['step4'];
+        $user_age = $_SESSION['old_age'];
+        $score = ($user_q_age/$user_age)*100;
         $insert = $config->query("INSERT INTO `people`(`age`, `mail`, `pay`, `score`) VALUES ('$user_age','$email','true','$score')");
         if ($insert==true){
             $_SESSION['step5']=$email;
