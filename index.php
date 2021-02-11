@@ -92,9 +92,6 @@ if (isset($_SESSION['step4'])){
 				</div>
 			</div>
 		</section>
-
-		
-		
 		<!--jQuery Main Libraty Latest Version-->
 		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 		<!--Bootstrap v4.5.3 JS File-->
