@@ -53,6 +53,11 @@ $number_of_page = ceil ($total / $results_per_page);
                         <button onclick="back()" class="btn" type="button">Previous</button>
                     </div>
                 <?php } ?>
+                <?php if ($page>1 && $total>$page){ ?>
+                    <div class="single_button">
+                        <button class="btn" onclick="window.location.href='php/autoload.php?completed'" type="button">Quit</button>
+                    </div>
+                <?php } ?>
                 <?php if ($page==$total){ ?>
                     <div class="single_button">
                         <button onclick="finish()" class="btn" type="button">Finish</button>
@@ -60,11 +65,6 @@ $number_of_page = ceil ($total / $results_per_page);
                 <?php }else{ ?>
                     <div class="single_button">
                         <button name="next_quiz" class="btn" type="button" onclick="controller()">Next</button>
-                    </div>
-                <?php } ?>
-                <?php if ($page>1 && $total>$page){ ?>
-                    <div class="single_button">
-                        <button class="btn" onclick="window.location.href='php/autoload.php?completed'" type="button">Quit</button>
                     </div>
                 <?php } ?>
             </div>

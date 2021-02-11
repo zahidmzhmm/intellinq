@@ -43,24 +43,9 @@ if (isset($_POST['start_question'])){
     unset($_SESSION['step2']);
     header("location:../test-is-over.php");
 }elseif (isset($_GET['completed'])){
-    $user_age  = $_SESSION['step2'];
-    $user_datas = $_SESSION['question'];
-    $correct = 0;
-    foreach ($user_datas as $user_data=>$usr_data){
-        $user_ans = $usr_data['option_num'];
-        $question_id = $usr_data['question_id'];
-        $correct_ans_data = mysqli_fetch_array($config->query("SELECT `answer` FROM `questions` WHERE id='$question_id'"));
-        $correct_ans = $correct_ans_data['answer'];
-        if ($user_ans==$correct_ans){
-            ++$correct;
-        }
-    }
-    $insert = $config->query("INSERT INTO `results`(`age`, `iq_score`) VALUES ('$user_age','$correct')");
-    $last_usr_data = mysqli_fetch_array($config->query("SELECT `id` FROM `results` WHERE 1 order by id desc"));
-    $last_user = $last_usr_data['id'];
-    $_SESSION['step4']=$last_user;
-    unset($_SESSION['step2']);
-    header("location:../get-result.php");
+    unset($_SESSION['step3']);
+    session_destroy();
+    header("location:../index.php");
 }elseif (isset($_GET['completed2'])){
     $user_age = $_SESSION['step3'];
     $user_datas = $_SESSION['question'];

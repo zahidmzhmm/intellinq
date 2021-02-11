@@ -25,10 +25,10 @@ if (!isset($_SESSION['step2'])){
         <script src="script.js"></script>
         <style>
             .single_answer.btn.btn-light.active3 {
-                border: 1px solid red;
+                border: 1px solid green;
             }
             .single_answer.btn.btn-light.active3 h5 {
-                color: red;
+                color: green;
             }
         </style>
 	</head>
