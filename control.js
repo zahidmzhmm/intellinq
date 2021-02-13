@@ -29,6 +29,6 @@ function finish() {
     let question_num = $(".page").val();
     $.post("php/autoload.php", { question_id: question_num, answer_id: id, option_num: option, auth: "questions_ajax" })
         .done(function( data ) {
-            window.location.href='php/autoload.php?completed';
+            window.location.href='php/autoload.php?timeout';
         });
 }

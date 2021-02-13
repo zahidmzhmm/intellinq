@@ -55,7 +55,7 @@ if (isset($_GET['score'])){
                         </div>
                         <div class="share_link">
                             <input type="text" id="link" class="form-control mb-2" value="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
-                            <button onclick="copy()" class="btn btn-success">Copy and Share</button>
+                            <a href="index.php" class="btn btn-warning">Start Again</a>
                         </div>
                     </div>
                 </div>
