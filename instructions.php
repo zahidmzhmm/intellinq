@@ -42,6 +42,7 @@ if (!isset($_SESSION['step1'])){
 							<li>you can go back and forward at any time during the test</li>
 						</ul>
 					</div>
+                    <input type="email" class="form-control mb-2" placeholder="Email">
                     <select name="age" required onfocus="this.size=4;" onblur="this.size=1;" onchange="this.size=1; this.blur();" id="" class="form-control mb-3">
                         <option value="">Age</option>
                         <option value="15">15</option>
