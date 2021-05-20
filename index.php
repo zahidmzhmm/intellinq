@@ -45,7 +45,6 @@ if (isset($_SESSION['step4'])){
 						<h4>Do Now The IQ Test And Match Yourself With The Most Intelligence People On The Planet.</h4>
 					</div>
 					<form action="php/autoload.php" method="post">
-                        <input name="email" type="email" placeholder="Email Address" class="form-control mb-3" />
 						<!--<select name="age" required onfocus="this.size=4;" onblur="this.size=1;" onchange="this.size=1; this.blur();" id="" class="form-control">
 							<option value="">Age</option>
 							<option value="15">15</option>

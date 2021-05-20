@@ -10,9 +10,7 @@ $config->con();
 $login    = new Login();
 $question = new Question();
 if (isset($_POST['start_question'])){
-    $req   = $_POST;
-    $email = $req['email'];
-    $_SESSION['step1']=$email;
+    $_SESSION['step1']="Start";
     header("location:../instructions.php");
 }elseif (isset($_POST['signin_admin'])){
     $login->admin($_POST);
@@ -45,7 +43,7 @@ if (isset($_POST['start_question'])){
     }
 }elseif (isset($_POST['stat_quiz'])){
     $_SESSION['step2']=[
-        'email'=>$_SESSION['step1'],
+        'email'=>$_POST['email'],
         'age'=>$_POST['age']
     ];
     unset($_SESSION['step1']);
