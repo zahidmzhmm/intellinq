@@ -45,8 +45,8 @@ if (isset($_SESSION['step4'])){
 						<h4>Do Now The IQ Test And Match Yourself With The Most Intelligence People On The Planet.</h4>
 					</div>
 					<form action="php/autoload.php" method="post">
-<!--                        <input name="email" type="email" placeholder="Email Address" class="form-control mb-3" />-->
-						<select name="age" required onfocus="this.size=4;" onblur="this.size=1;" onchange="this.size=1; this.blur();" id="" class="form-control">
+                        <input name="email" type="email" placeholder="Email Address" class="form-control mb-3" />
+						<!--<select name="age" required onfocus="this.size=4;" onblur="this.size=1;" onchange="this.size=1; this.blur();" id="" class="form-control">
 							<option value="">Age</option>
 							<option value="15">15</option>
 							<option value="16">16</option>
@@ -84,7 +84,7 @@ if (isset($_SESSION['step4'])){
 							<option value="48">48</option>
 							<option value="49">49</option>
 							<option value="50">50</option>
-						</select>
+						</select>-->
                         <div class="clickable_link">
                             <button type="submit" name="start_question">Start Here</button>
                         </div>

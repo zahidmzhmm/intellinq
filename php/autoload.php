@@ -11,8 +11,8 @@ $login    = new Login();
 $question = new Question();
 if (isset($_POST['start_question'])){
     $req   = $_POST;
-    $age   = $req['age'];
-    $_SESSION['step1']=$age;
+    $email = $req['email'];
+    $_SESSION['step1']=$email;
     header("location:../instructions.php");
 }elseif (isset($_POST['signin_admin'])){
     $login->admin($_POST);
@@ -43,8 +43,11 @@ if (isset($_POST['start_question'])){
         $_SESSION['alert1']="Something Problem";
         header("location:../admin/add_question.php");
     }
-}elseif (isset($_GET['stat_quiz'])){
-    $_SESSION['step2']=$_SESSION['step1'];
+}elseif (isset($_POST['stat_quiz'])){
+    $_SESSION['step2']=[
+        'email'=>$_SESSION['step1'],
+        'age'=>$_POST['age']
+    ];
     unset($_SESSION['step1']);
     header("location:../questions.php");
 }elseif (isset($_GET['timeout'])){
@@ -56,7 +59,7 @@ if (isset($_POST['start_question'])){
     session_destroy();
     header("location:../index.php");
 }elseif (isset($_GET['completed'])){
-    $user_age  = $_SESSION['step2'];
+    $user_age  = $_SESSION['step2']['age'];
     $user_datas = $_SESSION['question'];
     $correct = 0;
     foreach ($user_datas as $user_data=>$usr_data){
@@ -76,11 +79,12 @@ if (isset($_POST['start_question'])){
         $q_age = $user_age;
     }
     $_SESSION['step4']=$q_age;
+    $_SESSION['old_data']=$_SESSION['step2'];
     $_SESSION['old_age']=$user_age;
     unset($_SESSION['step2']);
     header("location:../get-result.php");
 }elseif (isset($_GET['completed2'])){
-    $user_age = $_SESSION['step3'];
+    $user_age = $_SESSION['step3']['age'];
     $user_datas = $_SESSION['question'];
     $correct = 0;
     foreach ($user_datas as $user_data=>$usr_data){
@@ -100,6 +104,7 @@ if (isset($_POST['start_question'])){
         $q_age = $user_age;
     }
     $_SESSION['step4']=$q_age;
+    $_SESSION['old_data']=$_SESSION['step3'];
     $_SESSION['old_age']=$user_age;
     unset($_SESSION['step3']);
     header("location:../get-result.php");
@@ -107,8 +112,9 @@ if (isset($_POST['start_question'])){
     if ($_POST['auth']=='questions_ajax'){
         $add = $question->QuestionPhpFun($_POST);
     }
-    if ($_POST['auth']=='payment_completed' && isset($_POST['email'])){
-        $email = $_POST['email'];
+    if ($_POST['auth']=='payment_completed' && isset($_POST['email_paid'])){
+        $email_paid = $_POST['email_paid'];
+        $email = $_SESSION['old_data']['email'];
         $user_q_age = $_SESSION['step4'];
         $user_age = $_SESSION['old_age'];
         $score = ($user_q_age/$user_age)*100;
@@ -131,6 +137,7 @@ if (isset($_POST['start_question'])){
     unset($_SESSION['step2']);
     unset($_SESSION['step3']);
     unset($_SESSION['step4']);
+    unset($_SESSION['old_data']);
     unset($_SESSION['step5']);
     session_destroy();
     echo 200;

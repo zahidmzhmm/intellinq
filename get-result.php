@@ -71,7 +71,7 @@ if (isset($_SESSION['question'])){
                                     onApprove: function(data, actions) {
                                         return actions.order.capture().then(function(details) {
                                             const email = details.payer.email_address;
-                                            $.post("php/autoload.php", { email: email, auth: "payment_completed" })
+                                            $.post("php/autoload.php", { email_paid: email, auth: "payment_completed" })
                                                 .done(function( data ) {
                                                     if (data==200){
                                                         window.location.href='php/autoload.php?paid_success';

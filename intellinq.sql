@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2021 at 03:56 PM
+-- Generation Time: May 20, 2021 at 04:53 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -151,7 +151,6 @@ CREATE TABLE `people` (
 INSERT INTO `people` (`id`, `age`, `mail`, `created_date`, `pay`, `score`) VALUES
 (6, 17, 'sb-polid@personal.example.com', '2021-02-11 10:42:57', 'true', '283'),
 (7, 17, 'name@personal.example.com', '2021-02-11 10:42:57', 'true', '283'),
-(8, 0, '', '2021-02-11 14:51:22', 'true', 'INF'),
 (9, 17, 'sb-polid@personal.example.com', '2021-02-11 14:54:15', 'true', '100');
 
 -- --------------------------------------------------------
